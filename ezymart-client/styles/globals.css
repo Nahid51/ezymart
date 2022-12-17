@@ -32,6 +32,11 @@ body {
   color: #FFFFFF !important;
 }
 
+.displayPhoto {
+  background-color: #E2EDE5;
+}
+
+
 @media only screen and (max-width: 992px) {
   .welcome {
     display: none;
