@@ -270,7 +270,49 @@ export default function Home() {
         <Categories />
 
         <Container>
-          nahid hasan
+          <div className='row my-5'>
+            <div className='col-12 col-lg-6 mt-3'>
+              <Carousel controls={false} indicators={false}>
+                <Carousel.Item interval={3000}>
+                  <div className='img-wrapper'>
+                    <img
+                      className="d-block w-100 hover-zoom"
+                      src="https://i.ibb.co/pwP6PC2/h21-banner-4.jpg"
+                      alt="Fourth slide"
+                    />
+                  </div>
+                  <Carousel.Caption className='text-start top-0'>
+                    <small className='text-dark fw-bold'>BEST SELLER</small>
+                    <h3 className='text-dark mt-2 mb-3'>Cookware & <br /> Kitchen Tools</h3>
+                    <small>
+                      <Link href="/" className='text-dark fw-bold fs-5'>Buy Now</Link>
+                    </small>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+
+            <div className='col-12 col-lg-6 mt-3'>
+              <Carousel controls={false} indicators={false}>
+                <Carousel.Item interval={3000}>
+                  <div className='img-wrapper'>
+                    <img
+                      className="d-block w-100 hover-zoom"
+                      src="https://i.ibb.co/KhRT03w/h21-banner-5.jpg"
+                      alt="Fourth slide"
+                    />
+                  </div>
+                  <Carousel.Caption className='text-start top-0'>
+                    <small className='text-dark fw-bold'>HEALTH APP</small>
+                    <h3 className='text-dark mt-2 mb-3'>Kitchen tools for <br /> smart cooking</h3>
+                    <small>
+                      <Link href="/" className='text-dark fw-bold fs-5'>Buy Now</Link>
+                    </small>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              </Carousel>
+            </div>
+          </div>
         </Container>
 
       </main>
@@ -279,3 +321,8 @@ export default function Home() {
     </div>
   )
 }
+
+
+
+// https://i.ibb.co/KhRT03w/h21-banner-5.jpg
+// https://i.ibb.co/pwP6PC2/h21-banner-4.jpg
