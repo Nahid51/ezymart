@@ -15,7 +15,6 @@ body {
   background-color: #F6F6F6;
 }
 
-
 .cart_position>span {
   position: absolute;
   font-size: 12px;
@@ -36,6 +35,25 @@ body {
 .displayPhoto {
   background-color: #E2EDE5;
 }
+
+
+.img-wrapper {
+  overflow: hidden;
+}
+
+.img-wrapper img,
+a {
+  width: 100%;
+  transition: all .5s ease-in-out;
+}
+
+img.hover-zoom:hover {
+  transform: scale(1.2);
+  cursor: pointer
+}
+
+
+
 
 
 @media only screen and (max-width: 992px) {

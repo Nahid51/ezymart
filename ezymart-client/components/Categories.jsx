@@ -7,44 +7,65 @@ const Categories = () => {
         <div className='headerBg py-5'>
             <Container>
                 <h2><b>Top</b> Categories</h2>
-                <div className='d-flex justify-content-between'>
-                    <div style={{ background: "#FFFFFF" }} className="p-5">
-                        <img src="https://i.ibb.co/3YVmnKG/h21-img-1.jpg" alt="Photo1" />
-                        <div>
-                            <h4>Mobile & Tablet</h4>
-                            <div>
-                                <p>Iphone</p>
-                                <p>Samsung</p>
-                                <p>Nokia</p>
-                                <p>Blackberry</p>
+                <div className='row mt-4'>
+                    <div className='col-12 col-md-6 col-lg-4'>
+                        <div style={{ background: "#FFFFFF" }} className="d-flex pt-4 pe-5 pb-4">
+                            <div className='img-wrapper'>
+                                <img src="https://i.ibb.co/3YVmnKG/h21-img-1.jpg"
+                                    alt="Photo3"
+                                    className='hover-zoom'
+                                />
                             </div>
-                            <Link href="/">View More</Link>
+                            <div>
+                                <h5>TV & Computer</h5>
+                                <div className='mt-4 mb-5 text-secondary'>
+                                    <p className='m-0'>Iphone</p>
+                                    <p className='m-0'>Samsung</p>
+                                    <p className='m-0'>Nokia</p>
+                                    <p className='m-0'>Blackberry</p>
+                                </div>
+                                <Link href="/" className='text-warning'>View More</Link>
+                            </div>
                         </div>
                     </div>
-                    <div style={{ background: "#FFFFFF" }}>
-                        <img src="" alt="" />
-                        <div>
-                            <h4>Mobile & Tablet</h4>
-                            <div>
-                                <p>Iphone</p>
-                                <p>Samsung</p>
-                                <p>Nokia</p>
-                                <p>Blackberry</p>
+                    <div className='col-12 col-md-6 col-lg-4'>
+                        <div style={{ background: "#FFFFFF" }} className="d-flex pt-4 pe-5 pb-4">
+                            <div className='img-wrapper'>
+                                <img src="https://i.ibb.co/Z6JMMb7/h21-img-2.jpg"
+                                    alt="Photo3"
+                                    className='hover-zoom'
+                                />
                             </div>
-                            <Link href="/">View More</Link>
+                            <div>
+                                <h5>Mobile & Tablet</h5>
+                                <div className='mt-4 mb-5 text-secondary'>
+                                    <p className='m-0'>Iphone</p>
+                                    <p className='m-0'>Samsung</p>
+                                    <p className='m-0'>Nokia</p>
+                                    <p className='m-0'>Blackberry</p>
+                                </div>
+                                <Link href="/" className='text-warning'>View More</Link>
+                            </div>
                         </div>
                     </div>
-                    <div style={{ background: "#FFFFFF" }}>
-                        <img src="" alt="" />
-                        <div>
-                            <h4>Mobile & Tablet</h4>
-                            <div>
-                                <p>Iphone</p>
-                                <p>Samsung</p>
-                                <p>Nokia</p>
-                                <p>Blackberry</p>
+                    <div className='col-12 col-md-6 col-lg-4'>
+                        <div style={{ background: "#FFFFFF" }} className="d-flex pt-4 pe-5 pb-4">
+                            <div className='img-wrapper'>
+                                <img src="https://i.ibb.co/d6Kpb1V/h21-img-3.jpg"
+                                    alt="Photo3"
+                                    className='hover-zoom'
+                                />
                             </div>
-                            <Link href="/">View More</Link>
+                            <div>
+                                <h5>Washing Machine</h5>
+                                <div className='mt-4 mb-5 text-secondary'>
+                                    <p className='m-0'>Iphone</p>
+                                    <p className='m-0'>Samsung</p>
+                                    <p className='m-0'>Nokia</p>
+                                    <p className='m-0'>Blackberry</p>
+                                </div>
+                                <Link href="/" className='text-warning'>View More</Link>
+                            </div>
                         </div>
                     </div>
                 </div>

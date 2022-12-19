@@ -154,11 +154,13 @@ export default function Home() {
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
                         <Carousel.Item interval={3000}>
-                          <img
-                            className="d-block w-100"
-                            src="https://i.ibb.co/T8w6QgF/banner2-h18.jpg"
-                            alt="First photo"
-                          />
+                          <div className='img-wrapper'>
+                            <img
+                              className="d-block w-100 hover-zoom"
+                              src="https://i.ibb.co/T8w6QgF/banner2-h18.jpg"
+                              alt="First photo"
+                            />
+                          </div>
                           <Carousel.Caption className='d-flex flex-column p-0'>
                             <small className='fs-6'>Need Exclusive Perfumes</small>
                             <small>
@@ -172,11 +174,13 @@ export default function Home() {
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
                         <Carousel.Item interval={3000}>
-                          <img
-                            className="d-block w-100"
-                            src="https://i.ibb.co/t8d4BtV/banner3-h18.jpg"
-                            alt="Second photo"
-                          />
+                          <div className='img-wrapper'>
+                            <img
+                              className="d-block w-100 hover-zoom"
+                              src="https://i.ibb.co/t8d4BtV/banner3-h18.jpg"
+                              alt="Second photo"
+                            />
+                          </div>
                           <Carousel.Caption className='d-flex flex-column p-0'>
                             <small className='fs-6'>Blender Combo</small>
                             <small>
@@ -189,11 +193,13 @@ export default function Home() {
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
                         <Carousel.Item interval={3000}>
-                          <img
-                            className="d-block w-100"
-                            src="https://i.ibb.co/dLdVfTY/banner4-h18.jpg"
-                            alt="Third photo"
-                          />
+                          <div className='img-wrapper'>
+                            <img
+                              className="d-block w-100 hover-zoom"
+                              src="https://i.ibb.co/dLdVfTY/banner4-h18.jpg"
+                              alt="Third photo"
+                            />
+                          </div>
                           <Carousel.Caption className='d-flex flex-column p-0'>
                             <small className='fs-6'>Unio Leather Bags</small>
                             <small>
@@ -208,11 +214,13 @@ export default function Home() {
                 <div className='col-12 col-md-4 displayPhoto'>
                   <Carousel controls={false} indicators={false}>
                     <Carousel.Item interval={3000}>
-                      <img
-                        className="d-block w-100"
-                        src="https://i.ibb.co/7JdHhDy/banner1-h18.jpg"
-                        alt="Fourth slide"
-                      />
+                      <div className='img-wrapper'>
+                        <img
+                          className="d-block w-100 hover-zoom"
+                          src="https://i.ibb.co/7JdHhDy/banner1-h18.jpg"
+                          alt="Fourth slide"
+                        />
+                      </div>
                       <Carousel.Caption className='text-start top-0'>
                         <small className='text-danger fw-bold'>NEW SHOTES</small>
                         <h3 className='text-dark fw-bold mt-4 mb-5'>Best Price & Great Quality</h3>
@@ -260,6 +268,10 @@ export default function Home() {
         </Container>
 
         <Categories />
+
+        <Container>
+          nahid hasan
+        </Container>
 
       </main>
 
