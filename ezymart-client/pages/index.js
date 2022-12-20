@@ -12,6 +12,7 @@ import { CiStopwatch } from "react-icons/ci";
 import { ImCreditCard } from "react-icons/im";
 import { BsChatSquareText, BsTruck } from "react-icons/bs";
 import Categories from '../components/Categories';
+import Products from '../components/Products';
 
 export default function Home() {
   return (
@@ -36,13 +37,13 @@ export default function Home() {
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <FiMonitor className='icons' />
-                    <text>Electronics</text>
+                    <text>Electronics & Computers</text>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <RxHand className='icons' />
-                    <text>Home & Garder</text>
+                    <text>Beauty & Health</text>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
@@ -54,19 +55,24 @@ export default function Home() {
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <GiLargeDress className='icons' size={20} />
-                    <text>Fashion</text>
+                    <text>Food & Grocery</text>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <MdSportsSoccer className='icons' size={20} />
-                    <text>Sporting Goods</text>
+                    <text>Sports & Outdoors</text>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <MdPets className='icons' />
                     <text>Pet Supplies</text>
+                  </Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
+                    <text>More ...</text>
                   </Link>
                 </Nav.Item>
               </Nav>
@@ -235,29 +241,29 @@ export default function Home() {
             </div>
           </section>
 
-          <section className='d-flex justify-content-around my-5'>
-            <div className='d-flex align-items-center gap-3'>
+          <section className='row'>
+            <div className='col-6 col-md-3 mt-5'>
               <BsTruck size={42} className="text-warning" />
               <div>
                 <b>FREE DELIVERY</b>
                 <p className='m-0 text-secondary'>For all orders over $100</p>
               </div>
             </div>
-            <div className='d-flex align-items-center gap-3'>
+            <div className='col-6 col-md-3 mt-5'>
               <RxCounterClockwiseClock size={40} className="text-warning" />
               <div>
                 <b>90 DAYS RETURN</b>
                 <p className='m-0 text-secondary'>If goods have problems</p>
               </div>
             </div>
-            <div className='d-flex align-items-center gap-3'>
+            <div className='col-6 col-md-3 mt-5'>
               <ImCreditCard size={40} className="text-warning" />
               <div>
                 <b>SECURE PAYMENT</b>
                 <p className='m-0 text-secondary'>100% secure paymen</p>
               </div>
             </div>
-            <div className='d-flex align-items-center gap-3'>
+            <div className='col-6 col-md-3 my-5'>
               <BsChatSquareText size={36} className="text-warning" />
               <div>
                 <b>24/7 SUPPORT</b>
@@ -313,6 +319,10 @@ export default function Home() {
               </Carousel>
             </div>
           </div>
+        </Container>
+
+        <Container>
+          <Products />
         </Container>
 
       </main>

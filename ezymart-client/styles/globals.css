@@ -53,8 +53,20 @@ img.hover-zoom:hover {
 }
 
 
+.hoverEffect:hover>.hoverItem {
+  display: inline-block !important;
+}
 
+.iconHover {
+  border: 1px solid #000;
+  transition: all .5s ease;
+}
 
+.iconHover:hover {
+  cursor: pointer;
+  color: #FFFFFF;
+  background: #000;
+}
 
 @media only screen and (max-width: 992px) {
   .welcome {
