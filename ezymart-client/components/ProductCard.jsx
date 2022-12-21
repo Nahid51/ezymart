@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Card, Col, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaRegHeart } from "react-icons/fa";
 import { BiGitCompare } from "react-icons/bi";
+import Link from 'next/link';
 
 const ProductCard = ({ item }) => {
     const { image, name, desc, category, price } = item;
@@ -20,12 +21,16 @@ const ProductCard = ({ item }) => {
         <div>
             <Col>
                 <Card className='hoverEffect border-0 rounded-0'>
-                    <div className='img-wrapper'>
-                        <Card.Img className='hover-zoom' variant="top" src={image} />
-                    </div>
+                    <Link href="/">
+                        <div className='img-wrapper'>
+                            <Card.Img className='hover-zoom' variant="top" src={image} />
+                        </div>
+                    </Link>
                     <Card.Body className='text-center'>
                         <Card.Text className='text-secondary'><small>{category}</small></Card.Text>
-                        <Card.Title><small>{name}</small></Card.Title>
+                        <Card.Title>
+                            <Link href="/" className='text-decoration-none text-dark'><small>{name}</small></Link>
+                        </Card.Title>
                         <Card.Text className='fw-bold text-warning'><small>{price}</small></Card.Text>
                         <Button variant="dark"><small>Add To Cart</small></Button>
                     </Card.Body>
