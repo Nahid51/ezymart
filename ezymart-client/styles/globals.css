@@ -41,8 +41,7 @@ body {
   overflow: hidden;
 }
 
-.img-wrapper img,
-a {
+.img-wrapper img {
   width: 100%;
   transition: all .5s ease-in-out;
 }
@@ -68,6 +67,8 @@ img.hover-zoom:hover {
   background: #000;
 }
 
+
+
 @media only screen and (max-width: 992px) {
   .welcome {
     display: none;
@@ -83,21 +84,38 @@ img.hover-zoom:hover {
     margin-top: 1rem;
   }
 
+  .homePoster>small {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .homePoster>h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .homePoster>p {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .homePoster>a {
+    font-size: 14px !important;
+  }
+
 }
 
 
-
-
-
-
-
-
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@media only screen and (max-width: 540px) {
+  .homePoster>p {
+    display: none;
   }
-  body {
-    color: white;
-    background: black;
+}
+
+@media only screen and (max-width: 480px) {
+
+  .homePoster>p,
+  .homePoster>small {
+    display: none;
   }
-} */
+}

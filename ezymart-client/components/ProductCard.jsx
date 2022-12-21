@@ -19,7 +19,7 @@ const ProductCard = ({ item }) => {
     return (
         <div>
             <Col>
-                <Card className='hoverEffect'>
+                <Card className='hoverEffect border-0'>
                     <div className='img-wrapper'>
                         <Card.Img className='hover-zoom' variant="top" src={image} />
                     </div>

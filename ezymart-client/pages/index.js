@@ -8,11 +8,11 @@ import { FiMonitor } from "react-icons/fi";
 import { RxHand, RxCounterClockwiseClock } from "react-icons/rx";
 import { MdOutlineToys, MdPets, MdSportsSoccer, MdPayment } from "react-icons/md";
 import { GiLargeDress } from "react-icons/gi";
-import { CiStopwatch } from "react-icons/ci";
 import { ImCreditCard } from "react-icons/im";
 import { BsChatSquareText, BsTruck } from "react-icons/bs";
 import Categories from '../components/Categories';
-import Products from '../components/Products';
+import ElectronicProducts from '../components/ElectronicProducts';
+import ClothProducts from '../components/ClothProducts';
 
 export default function Home() {
   return (
@@ -159,7 +159,7 @@ export default function Home() {
                   <div className="row gx-0">
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
-                        <Carousel.Item interval={3000}>
+                        <Carousel.Item>
                           <div className='img-wrapper'>
                             <img
                               className="d-block w-100 hover-zoom"
@@ -179,7 +179,7 @@ export default function Home() {
                     </div>
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
-                        <Carousel.Item interval={3000}>
+                        <Carousel.Item>
                           <div className='img-wrapper'>
                             <img
                               className="d-block w-100 hover-zoom"
@@ -198,7 +198,7 @@ export default function Home() {
                     </div>
                     <div className='col-4'>
                       <Carousel controls={false} indicators={false}>
-                        <Carousel.Item interval={3000}>
+                        <Carousel.Item>
                           <div className='img-wrapper'>
                             <img
                               className="d-block w-100 hover-zoom"
@@ -219,7 +219,7 @@ export default function Home() {
                 </div>
                 <div className='col-12 col-md-4 displayPhoto'>
                   <Carousel controls={false} indicators={false}>
-                    <Carousel.Item interval={3000}>
+                    <Carousel.Item>
                       <div className='img-wrapper'>
                         <img
                           className="d-block w-100 hover-zoom"
@@ -279,7 +279,7 @@ export default function Home() {
           <div className='row my-5'>
             <div className='col-12 col-lg-6 mt-3'>
               <Carousel controls={false} indicators={false}>
-                <Carousel.Item interval={3000}>
+                <Carousel.Item>
                   <div className='img-wrapper'>
                     <img
                       className="d-block w-100 hover-zoom"
@@ -300,7 +300,7 @@ export default function Home() {
 
             <div className='col-12 col-lg-6 mt-3'>
               <Carousel controls={false} indicators={false}>
-                <Carousel.Item interval={3000}>
+                <Carousel.Item>
                   <div className='img-wrapper'>
                     <img
                       className="d-block w-100 hover-zoom"
@@ -322,7 +322,10 @@ export default function Home() {
         </Container>
 
         <Container>
-          <Products />
+          <ElectronicProducts />
+
+          <ClothProducts />
+
         </Container>
 
       </main>
