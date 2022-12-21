@@ -29,7 +29,7 @@ const ProductCard = ({ item }) => {
                         <Card.Text className='fw-bold text-warning'><small>{price}</small></Card.Text>
                         <Button variant="dark"><small>Add To Cart</small></Button>
                     </Card.Body>
-                    <div className='position-absolute top-50 start-50 translate-middle text-dark d-none hoverItem'>
+                    <div className='position-absolute start-50 translate-middle text-dark d-none hoverItem'>
                         <div className='bg-light d-flex'>
                             <OverlayTrigger
                                 placement="top"

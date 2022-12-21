@@ -51,6 +51,9 @@ img.hover-zoom:hover {
   cursor: pointer
 }
 
+.hoverItem {
+  top: 30%;
+}
 
 .hoverEffect:hover>.hoverItem {
   display: inline-block !important;
@@ -106,8 +109,14 @@ img.hover-zoom:hover {
 }
 
 
-@media only screen and (max-width: 540px) {
-  .homePoster>p {
+@media only screen and (max-width: 768px) {
+
+  .homePoster>h2 {
+    font-size: 16px;
+  }
+
+  .homePoster>p,
+  .homePoster>small {
     display: none;
   }
 }
@@ -115,7 +124,8 @@ img.hover-zoom:hover {
 @media only screen and (max-width: 480px) {
 
   .homePoster>p,
-  .homePoster>small {
+  .homePoster>small,
+  .homePoster>h2 {
     display: none;
   }
 }

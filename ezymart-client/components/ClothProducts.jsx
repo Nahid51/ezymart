@@ -37,7 +37,7 @@ const ClothProducts = () => {
                             alt="Fourth slide"
                         />
                     </div>
-                    <Carousel.Caption className='text-start top-0 homePoster'>
+                    <Carousel.Caption className='text-start homePoster'>
                         <small className='text-primary'>NEW SHOES</small>
                         <h2 className='text-dark fw-bold mt-2'>Best Price & Great Quality</h2>
                         <p className='text-danger'>Sale up to 50% Off</p>

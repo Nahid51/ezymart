@@ -40,7 +40,7 @@ const ElectronicProducts = () => {
                             alt="Fourth slide"
                         />
                     </div>
-                    <Carousel.Caption className='text-start top-0 homePoster'>
+                    <Carousel.Caption className='text-start homePoster'>
                         <small className='text-light'>NEW PRODUCTS</small>
                         <h2 className='text-primary fw-bold mt-2'>Laptops & Desktops</h2>
                         <p className='text-dark'>In-Store Pickup Available</p>
