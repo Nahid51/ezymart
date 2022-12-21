@@ -19,7 +19,7 @@ const ProductCard = ({ item }) => {
     return (
         <div>
             <Col>
-                <Card className='hoverEffect border-0'>
+                <Card className='hoverEffect border-0 rounded-0'>
                     <div className='img-wrapper'>
                         <Card.Img className='hover-zoom' variant="top" src={image} />
                     </div>
@@ -29,7 +29,7 @@ const ProductCard = ({ item }) => {
                         <Card.Text className='fw-bold text-warning'><small>{price}</small></Card.Text>
                         <Button variant="dark"><small>Add To Cart</small></Button>
                     </Card.Body>
-                    <div className='position-absolute start-50 translate-middle text-dark d-none hoverItem'>
+                    <div className='position-absolute  start-50 translate-middle text-dark d-none hoverItem'>
                         <div className='bg-light d-flex'>
                             <OverlayTrigger
                                 placement="top"

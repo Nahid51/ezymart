@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { Button, Carousel, Container, Dropdown, DropdownButton, Nav } from 'react-bootstrap';
+import { Button, Card, Carousel, Col, Container, Dropdown, DropdownButton, Nav, Row } from 'react-bootstrap';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
@@ -13,6 +13,7 @@ import { BsChatSquareText, BsTruck } from "react-icons/bs";
 import Categories from '../components/Categories';
 import ElectronicProducts from '../components/ElectronicProducts';
 import ClothProducts from '../components/ClothProducts';
+import GardenKitchenProducts from '../components/GardenKitchenProducts';
 
 export default function Home() {
   return (
@@ -326,6 +327,86 @@ export default function Home() {
 
           <ClothProducts />
 
+          <GardenKitchenProducts />
+
+          <section id="brands" className='my-5'>
+            <h2><b>Best Seller </b>Brands</h2>
+            <hr />
+            <Row md={3} lg={4} xl={5} className="g-4 text-center">
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Daraz</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Chaldal</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Shajgoj</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Pickaboo</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Othoba</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Priyoshop</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Ajkerdeal</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Banglashoppers</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Sindabad</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col>
+                <Card>
+                  <Card.Body>
+                    <Card.Title>Rokomari</Card.Title>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+            <hr />
+          </section>
+
         </Container>
 
       </main>
@@ -334,8 +415,3 @@ export default function Home() {
     </div>
   )
 }
-
-
-
-// https://i.ibb.co/KhRT03w/h21-banner-5.jpg
-// https://i.ibb.co/pwP6PC2/h21-banner-4.jpg
