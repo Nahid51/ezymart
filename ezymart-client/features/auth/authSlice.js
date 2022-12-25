@@ -1,20 +1,73 @@
-// Need to use the React-specific entry point to import createApi
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import auth from "../firebase.config";
+import { toast } from "react-toastify";
 
-// Define a service using a base URL and expected endpoints
-export const authApi = createApi({
-    reducerPath: 'authApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:5000' }),
-    endpoints: (builder) => ({
-        postAuth: builder.mutation({
-            query: (userInfo) => ({
-                url: "/user",
-                body: userInfo
-            }),
-        }),
-    }),
-})
+const initialState = {
+    username: "",
+    email: "",
+    role: "",
+    isLoading: true,
+    isError: false,
+    error: ""
+};
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
-export const { usePostAuthQuery } = authApi;
+export const createUser = createAsyncThunk("auth/createUser", async ({ email, password }) => {
+    const data = await createUserWithEmailAndPassword(auth, email, password);
+    if (data.user.email) {
+        toast.success("Registration completed successfully!")
+    }
+    return data.user.email;
+});
+
+export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, password }) => {
+    const data = await signInWithEmailAndPassword(auth, email, password);
+    if (data.user.email) {
+        toast.success("User successfully logged in!")
+    }
+    return data.user.email;
+});
+
+const authSlice = createSlice({
+    name: "auth",
+    initialState,
+    extraReducers: (builder) => {
+        builder
+            .addCase(createUser.pending, (state) => {
+                state.isLoading = true;
+                state.isError = false;
+                state.error = "";
+            })
+            .addCase(createUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.email = action.payload;
+                state.isError = false;
+                state.error = "";
+            })
+            .addCase(createUser.rejected, (state, action) => {
+                state.isLoading = false;
+                state.email = "";
+                state.isError = true;
+                state.error = action.error.message;
+            })
+            .addCase(loginUser.pending, (state) => {
+                state.isLoading = true;
+                state.isError = false;
+                state.error = "";
+            })
+            .addCase(loginUser.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.email = action.payload;
+                state.isError = false;
+                state.error = "";
+            })
+            .addCase(loginUser.rejected, (state, action) => {
+                state.isLoading = false;
+                state.email = "";
+                state.isError = true;
+                state.error = action.error.message;
+            })
+    }
+});
+
+export default authSlice.reducer;

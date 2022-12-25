@@ -11,7 +11,7 @@ const ClothProducts = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
-    console.log(products);
+
     return (
         <div className='my-5'>
             <h2>Clothing & Apparel</h2>

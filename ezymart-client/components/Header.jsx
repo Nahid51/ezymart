@@ -8,8 +8,15 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Link from 'next/link';
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { RiShoppingBasket2Line } from "react-icons/ri";
+import { useSelector } from 'react-redux';
+import { BsSearch } from "react-icons/bs";
 
 const Header = () => {
+    const { email } = useSelector((state) => state.auth);
+    const handleLogOut = () => {
+
+    };
+
     return (
         <>
             {
@@ -162,15 +169,11 @@ const Header = () => {
                                             aria-label="Search"
                                         />
                                         <Button
-                                            variant="danger"
+                                            variant="dark"
                                             className="text-light fw-bold border-0 rounded-1"
-                                        >Search</Button>
+                                        ><BsSearch /></Button>
                                     </Form>
                                     <nav className='ms-3 d-flex gap-4 fs-5 nav_icon'>
-                                        <Link href="/login" className='text-decoration-none text-dark cart_position'>
-                                            <FaRegUser />
-                                            <span className='p-0'>✔</span>
-                                        </Link>
                                         <Link href="/wishlist" className='text-decoration-none text-dark cart_position'>
                                             <FaRegHeart />
                                             <span className='bg-danger text-light'>0</span>
@@ -179,6 +182,12 @@ const Header = () => {
                                             <RiShoppingBasket2Line size={24} />
                                             <span className='bg-danger text-light'>0</span>
                                         </Link>
+                                        {email ?
+                                            <Button variant='danger' className='fw-bold' onClick={handleLogOut}>Log out</Button> :
+                                            <Link href="/login" className='text-decoration-none text-dark cart_position'>
+                                                <Button variant='danger' className='fw-bold'>Log in</Button>
+                                            </Link>
+                                        }
                                     </nav>
                                 </Offcanvas.Body>
                             </Navbar.Offcanvas>

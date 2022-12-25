@@ -1,8 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { Button, Card, Carousel, Col, Container, Dropdown, DropdownButton, Nav, Row } from 'react-bootstrap';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import { FiMonitor } from "react-icons/fi";
 import { RxHand, RxCounterClockwiseClock } from "react-icons/rx";
@@ -14,6 +12,7 @@ import Categories from '../components/Categories';
 import ElectronicProducts from '../components/ElectronicProducts';
 import ClothProducts from '../components/ClothProducts';
 import GardenKitchenProducts from '../components/GardenKitchenProducts';
+import Header from '../components/Header';
 
 export default function Home() {
   return (
@@ -406,12 +405,8 @@ export default function Home() {
             </Row>
             <hr />
           </section>
-
         </Container>
-
       </main>
-
-      <Footer />
     </div>
   )
 }

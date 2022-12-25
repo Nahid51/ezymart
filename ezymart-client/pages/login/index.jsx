@@ -1,21 +1,32 @@
 import Head from 'next/head';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
+import { useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
+import { BsFacebook, BsGoogle } from "react-icons/bs";
+import { useDispatch, useSelector } from 'react-redux';
+import { loginUser } from '../../features/auth/authSlice';
 
 const Login = () => {
     const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        if (data.password !== data.rePassword) {
-            return toast.error("Password didn't match!");
+    const { isLoading, email } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    const router = useRouter()
 
-        } else {
-            console.log(data);
-        }
+    const onSubmit = data => {
+        dispatch(loginUser({ email: data.email, password: data.password }))
     };
 
     const handleGoogleSignIn = () => { }
     const handleFacaebookSignIn = () => { }
+
+    useEffect(() => {
+        if (!isLoading && email) {
+            router.push("/")
+        }
+    }, [isLoading, email]);
 
     return (
         <div>
@@ -25,33 +36,56 @@ const Login = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className='position-absolute top-50 start-50 translate-middle'>
-                <form
-                    onSubmit={handleSubmit(onSubmit)}
-                    className="d-flex flex-column gap-2"
-                >
-                    <input
-                        type="text"
-                        {...register("firstName", { required: true, maxLength: 20 })}
-                    />
-                    <input
-                        type="text"
-                        {...register("lastName", { required: true, maxLength: 20 })}
-                    />
-                    <input
-                        type="email"
-                        {...register("email", { required: true })}
-                    />
-                    <input
-                        type="password"
-                        {...register("password", { required: true })}
-                    />
-                    <input
-                        type="password"
-                        {...register("rePassword", { required: true })}
-                    />
-                    <input type="submit" />
-                </form>
+            <div className='row'>
+                <div className='col-12 col-lg-6'>
+                    <img className='w-100' src="https://i.ibb.co/BNcycST/login.jpg" alt='' />
+                </div>
+                <div className='row col-12 col-lg-6'>
+                    <div className='w-75 mx-auto my-auto'>
+                        <div className='p-5 rounded-4' style={{ backgroundColor: "#E1E1E1" }}>
+                            <h2 className='border-bottom border-dark'>Sign in</h2>
+                            <small>Don't have an account? <Link href="/register" className='text-primary text-decoration-none'>Sign up</Link></small>
+                            <form
+                                onSubmit={handleSubmit(onSubmit)}
+                                className="d-flex flex-column mt-3"
+
+                            >
+                                <div className='d-flex flex-column mb-2'>
+                                    <label htmlFor="email" className='mb-1'><small>Email</small></label>
+                                    <input
+                                        type="email"
+                                        name='email'
+                                        id='email'
+                                        className='p-2 rounded'
+                                        placeholder='name@gmail.com'
+                                        {...register("email", { required: true, maxLength: 20 })}
+                                    />
+                                </div>
+                                <div className='d-flex flex-column mb-2'>
+                                    <label htmlFor="password" className='mb-1'><small>Password</small></label>
+                                    <input
+                                        type="password"
+                                        name='password'
+                                        id='password'
+                                        className='p-2 rounded'
+                                        placeholder='example: C1rr!5R&2'
+                                        {...register("password", { required: true, maxLength: 20 })}
+                                    />
+                                </div>
+                                <Button
+                                    type='submit'
+                                    variant='primary'
+                                >
+                                    <small>Create an account</small>
+                                </Button>
+                                <Button variant='light border' className='mt-3 d-flex align-items-center justify-content-center gap-2'>
+                                    <BsGoogle />
+                                    <small>Sign in with Google</small>
+                                </Button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
