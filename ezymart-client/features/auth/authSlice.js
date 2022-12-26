@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { toast } from "react-hot-toast";
 import auth from "../firebase.config";
 
 const initialState = {
@@ -11,35 +12,25 @@ const initialState = {
     error: ""
 };
 
-export const createUser = createAsyncThunk("auth/createUser", async ({ email, password, router }, { rejectWithValue }) => {
-    try {
-        const data = await createUserWithEmailAndPassword(auth, email, password);
-        router.push("/");
-        return data.user.email;
-
-    } catch (error) {
-        console.log(error);
-        return rejectWithValue(error.data.error);
-    }
+export const createUser = createAsyncThunk("auth/createUser", async ({ email, password, router }) => {
+    const data = await createUserWithEmailAndPassword(auth, email, password);
+    router.push("/");
+    toast.success("Register successfully!");
+    return data.user.email;
 });
 
-export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, password, router }, { rejectWithValue }) => {
-    try {
-        const data = await signInWithEmailAndPassword(auth, email, password);
-        router.push("/");
-        return data.user.email;
-
-    } catch (error) {
-        console.log(error);
-        return rejectWithValue(error.data.error);
-    }
+export const loginUser = createAsyncThunk("auth/loginUser", async ({ email, password, router }) => {
+    const data = await signInWithEmailAndPassword(auth, email, password);
+    router.push("/");
+    toast.success("User successfully logged in !");
+    return data.user.email;
 });
 
-export const googleLogin = createAsyncThunk("auth/googleLogin", async () => {
+export const googleLogin = createAsyncThunk("auth/googleLogin", async (router) => {
     const googleProvider = new GoogleAuthProvider();
-
     const data = await signInWithPopup(auth, googleProvider);
-
+    router.push("/");
+    toast.success("User successfully logged in!");
     return data.user.email;
 });
 

@@ -1,10 +1,10 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-hot-toast';
 import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
@@ -16,16 +16,18 @@ const Login = () => {
     const dispatch = useDispatch();
     const router = useRouter();
 
-    // if (isError) {
-    //     toast.error(error)
-    // };
+    useEffect(() => {
+        if (isError) {
+            toast.error(error)
+        };
+    }, [isError, error]);
 
     const onSubmit = data => {
         dispatch(loginUser({ email: data.email, password: data.password, router }))
     };
 
     const handleGoogleSignIn = () => {
-        dispatch(googleLogin())
+        dispatch(googleLogin(router))
     };
 
     const handleFacaebookSignIn = () => { }

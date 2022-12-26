@@ -13,6 +13,7 @@ import { BsSearch } from "react-icons/bs";
 import { signOut } from 'firebase/auth';
 import auth from '../features/firebase.config';
 import { logOut } from '../features/auth/authSlice';
+import { toast } from 'react-hot-toast';
 
 const Header = () => {
     const { email } = useSelector((state) => state.auth);
@@ -22,7 +23,7 @@ const Header = () => {
             .then(() => {
                 dispatch(logOut())
             })
-            .finally()
+            .finally(toast.success("User successfully logged out!"))
     };
 
     return (
