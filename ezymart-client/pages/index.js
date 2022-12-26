@@ -13,8 +13,23 @@ import ElectronicProducts from '../components/ElectronicProducts';
 import ClothProducts from '../components/ClothProducts';
 import GardenKitchenProducts from '../components/GardenKitchenProducts';
 import Header from '../components/Header';
+import { useDispatch } from 'react-redux';
+import { onAuthStateChanged } from 'firebase/auth';
+import auth from '../features/firebase.config';
+import { setUser } from '../features/auth/authSlice';
+import { useEffect } from 'react';
 
 export default function Home() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(setUser(user.email))
+      }
+    })
+  }, []);
+
   return (
     <div>
       <Head>
@@ -37,42 +52,42 @@ export default function Home() {
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <FiMonitor className='icons' />
-                    <text>Electronics & Computers</text>
+                    <p className='m-0'>Electronics & Computers</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <RxHand className='icons' />
-                    <text>Beauty & Health</text>
+                    <p className='m-0'>Beauty & Health</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <MdOutlineToys className='icons' size={20} />
-                    <text>Toys & Kids</text>
+                    <p className='m-0'>Toys & Kids</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <GiLargeDress className='icons' size={20} />
-                    <text>Food & Grocery</text>
+                    <p className='m-0'>Food & Grocery</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <MdSportsSoccer className='icons' size={20} />
-                    <text>Sports & Outdoors</text>
+                    <p className='m-0'>Sports & Outdoors</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
                     <MdPets className='icons' />
-                    <text>Pet Supplies</text>
+                    <p className='m-0'>Pet Supplies</p>
                   </Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link href="/" className='d-flex align-items-center gap-2 py-3 px-3 border text-decoration-none text-dark hoverItem'>
-                    <text>More ...</text>
+                    <p className='m-0'>More ...</p>
                   </Link>
                 </Nav.Item>
               </Nav>

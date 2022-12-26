@@ -8,13 +8,21 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Link from 'next/link';
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { RiShoppingBasket2Line } from "react-icons/ri";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { BsSearch } from "react-icons/bs";
+import { signOut } from 'firebase/auth';
+import auth from '../features/firebase.config';
+import { logOut } from '../features/auth/authSlice';
 
 const Header = () => {
     const { email } = useSelector((state) => state.auth);
+    const dispatch = useDispatch()
     const handleLogOut = () => {
-
+        signOut(auth)
+            .then(() => {
+                dispatch(logOut())
+            })
+            .finally()
     };
 
     return (

@@ -27,7 +27,7 @@ body {
   transition: all .5s ease;
 }
 
-.hoverItem:hover>text,
+.hoverItem:hover>p,
 .hoverItem:hover>.icons {
   color: #FFFFFF !important;
 }

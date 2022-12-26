@@ -4,8 +4,9 @@ import { useForm, useWatch } from "react-hook-form";
 import { Button } from 'react-bootstrap';
 import { BsFacebook, BsGoogle } from "react-icons/bs";
 import Link from 'next/link';
-import { useDispatch } from 'react-redux';
-import { createUser } from '../../features/auth/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser, googleLogin } from '../../features/auth/authSlice';
+import { useRouter } from 'next/router';
 // import { AiFillGoogleCircle } from "react-icons/ai";
 
 const Register = () => {
@@ -13,7 +14,10 @@ const Register = () => {
     const password = useWatch({ control, name: "password" });
     const confirmPassword = useWatch({ control, name: "confirmPassword" });
     const [disabled, setDisabled] = useState(true);
-    const dispatch = useDispatch()
+
+    const { isLoading, email, isError, error } = useSelector((state) => state.auth);
+    const dispatch = useDispatch();
+    const router = useRouter();
 
     useEffect(() => {
         if (
@@ -30,7 +34,11 @@ const Register = () => {
     }, [password, confirmPassword]);
 
     const onSubmit = (data) => {
-        dispatch(createUser({ email: data.email, password: data.password }));
+        dispatch(createUser({ email: data.email, password: data.password, router }));
+    };
+
+    const handleGoogleSignIn = () => {
+        dispatch(googleLogin())
     };
 
     return (
@@ -104,6 +112,14 @@ const Register = () => {
                                     disabled={disabled}
                                 >
                                     <small>Create an account</small>
+                                </Button>
+                                <Button
+                                    variant='light'
+                                    onClick={handleGoogleSignIn}
+                                    className='mt-3 border d-flex align-items-center justify-content-center gap-2 '
+                                >
+                                    <BsGoogle />
+                                    <small>Sign in with Google</small>
                                 </Button>
                             </form>
                         </div>
